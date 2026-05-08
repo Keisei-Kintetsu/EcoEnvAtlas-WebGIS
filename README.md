@@ -1,6 +1,6 @@
 # EcoEnvAtlas Web GIS
 
-EcoEnvAtlas is a Web GIS platform for visualizing and exploring national-scale ecological environment information in China. It is designed around a seamless, multi-year, 30 m ecological data product, and turns large raster and vector datasets into an interactive browser-based system.
+EcoEnvAtlas is a Web GIS platform for visualizing and exploring national-scale ecological environment information in China. The system is built around a seamless, multi-year, 30 m ecological data product and presents large raster layers, administrative boundaries, county statistics, and pixel-level time series through an interactive browser interface.
 
 Live website: http://ecoenvatlas.com/
 
@@ -18,17 +18,23 @@ Live website: http://ecoenvatlas.com/
 ## Repository Structure
 
 - `website_source/raster_viewer_public/`: main interactive map interface, including layer controls, raster loading, pixel query, comparison mode, and share links.
-- `website_source/web_public/`: county analytics page, explanatory pages, multilingual scripts, interface assets, and lightweight web data.
+- `website_source/web_public/`: county analytics page, explanatory pages, multilingual scripts, interface assets, and web data.
 - `deployment_snapshot/`: online deployment inventory and mosaic registry snapshot used to document how the raster service is organized.
-- `SUBMISSION_WORKFLOW.md`: notes for course submission and lightweight project sharing.
 
 ## Data Access
 
-The full 30 m raster product is managed as an online geospatial dataset rather than a regular Git repository asset. The current public access point is provided through Google Earth Engine:
+The 30 m ecological data product is available through Google Earth Engine:
 
 https://code.earthengine.google.com/b0d2fc95b8bd7d44cc0c2553ed5dc979
 
-The deployed Web GIS also serves raster layers through cloud-optimized GeoTIFFs and tile-based requests, allowing users to browse large national data without downloading the full archive locally.
+The deployed Web GIS connects the data product with Cloud-Optimized GeoTIFFs, mosaic registries, and tiled map requests, making national-scale ecological layers directly explorable in the browser.
+
+## Team
+
+- Liang Erzheng 梁而正, 3036659168
+- Zhang Yizhe 张一喆, 3036616788
+- Bo Yutong 薄雨彤, 3036613554
+- Xu Zhang 徐璋, 3036659039
 
 ## Local Preview
 
@@ -51,7 +57,7 @@ Some raster layers depend on the deployed online tile service and therefore requ
 
 # EcoEnvAtlas 生态环境图谱 Web GIS
 
-EcoEnvAtlas 是一个面向中国生态环境信息浏览、查询和展示的 Web GIS 平台。系统围绕一套多年期、全国尺度、30 m 分辨率生态环境数据产品构建，把大规模栅格数据、县域矢量边界和交互式图表组织成可以直接在浏览器中使用的地图系统。
+EcoEnvAtlas 是一个面向中国生态环境信息浏览、查询和展示的 Web GIS 平台。系统围绕一套多年期、全国尺度、30 m 分辨率生态环境数据产品构建，把大规模栅格图层、行政边界、县域统计和像元时间序列组织成可以直接在浏览器中使用的交互式地图系统。
 
 在线网站：http://ecoenvatlas.com/
 
@@ -69,17 +75,23 @@ Google Earth Engine 中的 30 m 数据产品：https://code.earthengine.google.c
 ## 仓库结构
 
 - `website_source/raster_viewer_public/`：融合地图页面，包括图层控制、栅格加载、像元查询、年份对比和视图分享等功能。
-- `website_source/web_public/`：县域分析页面、说明页面、多语言脚本、界面素材和轻量级网页数据。
+- `website_source/web_public/`：县域分析页面、说明页面、多语言脚本、界面素材和网页数据。
 - `deployment_snapshot/`：线上部署数据清单和 mosaic registry 快照，用于说明栅格服务的数据组织方式。
-- `SUBMISSION_WORKFLOW.md`：课程提交和轻量化项目分享的说明。
 
 ## 数据访问
 
-完整 30 m 栅格产品以在线地理数据的方式管理，不适合作为普通 Git 仓库文件存放。目前可以通过 Google Earth Engine 访问：
+30 m 生态环境数据产品可通过 Google Earth Engine 访问：
 
 https://code.earthengine.google.com/b0d2fc95b8bd7d44cc0c2553ed5dc979
 
-线上 Web GIS 同时通过 Cloud-Optimized GeoTIFF 和瓦片请求提供地图浏览能力，使用户无需下载完整数据集即可查看全国尺度的生态环境图层。
+线上 Web GIS 将数据产品与 Cloud-Optimized GeoTIFF、mosaic registry 和地图瓦片请求连接起来，使全国尺度生态环境图层可以直接在浏览器中浏览和查询。
+
+## 项目成员
+
+- Liang Erzheng 梁而正, 3036659168
+- Zhang Yizhe 张一喆, 3036616788
+- Bo Yutong 薄雨彤, 3036613554
+- Xu Zhang 徐璋, 3036659039
 
 ## 本地预览
 
