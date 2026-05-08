@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>光学指标 | EcoEnvAtlas</title>
+    <link rel="stylesheet" href="./styles.css?v=20260424f" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="hero">
+        <div>
+          <p class="eyebrow" id="optEyebrow">光学指标</p>
+          <h1 id="optTitle">NDVI、WET 与 NDBSI 的构建</h1>
+          <p class="subtitle" id="optSubtitle">
+            本页概述 NDVI、WET 与 NDBSI 的构建基础与研究作用，重点说明年度无缝 Landsat 光学合成产品为何能够为长期全国尺度生态环境指标提供稳定支撑。
+          </p>
+          <nav class="page-nav">
+            <a href="../fusion.html" id="navFusion">交互地图</a>
+            <a href="./analysis.html" id="navAnalysis">县域分析</a>
+            <a href="./methods.html" id="navPca">RSEI PCA</a>
+            <a href="./background.html" id="navBackground">研究背景</a>
+            <a href="./optical-indicators.html" id="navOptical" aria-current="page">光学指标</a>
+            <a href="./lst-downscaling.html" id="navLst">30 米 LST</a>
+            <a href="./tech-stack.html" id="navStack">技术栈</a>
+            <a href="./team.html" id="navTeam">团队成员</a>
+          </nav>
+        </div>
+        <label class="language-control language-control-compact" title="Language">
+          <span class="language-icon" aria-hidden="true">🌐</span>
+          <span class="sr-only">Language</span>
+          <select id="languageSelect">
+            <option value="en">English</option>
+            <option value="zh_hant">繁體中文</option>
+            <option value="zh_cn">简体中文</option>
+          </select>
+        </label>
+      </section>
+
+      <section class="content-grid">
+        <article class="content-card wide">
+          <h2 id="optSection1Title">年度光学指标构建的数据基础</h2>
+          <div class="text-block" id="optSection1Body"></div>
+        </article>
+
+        <article class="content-card">
+          <h2 id="optSection2Title">基础数据特征</h2>
+          <ul class="bullet-list" id="optSection2List"></ul>
+        </article>
+
+        <article class="content-card">
+          <h2 id="optSection3Title">叶盛期合成的含义</h2>
+          <div class="text-block" id="optSection3Body"></div>
+        </article>
+
+        <article class="content-card">
+          <h2 id="optSection4Title">三个指标在系统中的作用</h2>
+          <ul class="bullet-list" id="optSection4List"></ul>
+        </article>
+
+        <article class="content-card wide">
+          <h2 id="optSection5Title">2025 年光学指标示例</h2>
+          <div class="figure-grid three-up">
+            <figure class="figure-card">
+              <img src="./assets/research/ndvi_2025.png" alt="NDVI 2025" />
+              <figcaption class="figure-caption" id="optCaption1">NDVI（2025）：用于表征植被绿度及植被覆盖状况。</figcaption>
+            </figure>
+            <figure class="figure-card">
+              <img src="./assets/research/wet_2025.png" alt="WET 2025" />
+              <figcaption class="figure-caption" id="optCaption2">WET（2025）：用于表征地表湿润度与水热条件。</figcaption>
+            </figure>
+            <figure class="figure-card">
+              <img src="./assets/research/ndbsi_2025.png" alt="NDBSI 2025" />
+              <figcaption class="figure-caption" id="optCaption3">NDBSI（2025）：用于表征干燥度以及裸地、建设用地等地表特征。</figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <article class="content-card wide">
+          <h2 id="optSection6Title">光学指标在整体研究框架中的作用</h2>
+          <div class="text-block" id="optSection6Body"></div>
+        </article>
+      </section>
+    </main>
+
+    <script src="./optical-indicators.js?v=20260425a"></script>
+  </body>
+</html>

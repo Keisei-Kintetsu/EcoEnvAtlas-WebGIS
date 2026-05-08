@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RSEI PCA | China Eco-Environmental GIS</title>
+    <link rel="stylesheet" href="./styles.css?v=20260424f" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="hero">
+        <div>
+          <p class="eyebrow" data-i18n="rseiPca">RSEI PCA</p>
+          <h1 data-i18n="methodsTitle">RSEI PCA Summary</h1>
+          <p class="subtitle" data-i18n="methodsSubtitle">
+            A compact summary of the principal component analysis used to derive the national
+            30 m RSEI product.
+          </p>
+          <nav class="page-nav">
+            <a href="../fusion.html" data-i18n="interactiveMap">Interactive Map</a>
+            <a href="./analysis.html" data-i18n="countyAnalytics">County Analytics</a>
+            <a href="./methods.html" aria-current="page" data-i18n="rseiPca">RSEI PCA</a>
+            <a href="./background.html" data-i18n="background">Research Background</a>
+            <a href="./optical-indicators.html" data-i18n="opticalIndicators">Optical Indicators</a>
+            <a href="./lst-downscaling.html" data-i18n="lst30m">LST 30 m</a>
+            <a href="./tech-stack.html" data-i18n="techStack">Tech Stack</a>
+            <a href="./team.html" data-i18n="team">Team</a>
+          </nav>
+        </div>
+        <label class="language-control language-control-compact" title="Language">
+          <span class="language-icon" aria-hidden="true">🌐</span>
+          <span class="sr-only" data-i18n="language">Language</span>
+          <select id="languageSelect">
+            <option value="en">English</option>
+            <option value="zh_hant">繁體中文</option>
+            <option value="zh_cn">简体中文</option>
+          </select>
+        </label>
+      </section>
+
+      <section class="methods-grid">
+        <article class="method-card">
+          <h2 data-i18n="overview">Overview</h2>
+          <div class="summary-grid" id="summaryGrid"></div>
+        </article>
+
+        <article class="method-card">
+          <h2 data-i18n="indicatorTable">Indicator Standardization and PC1 Loadings</h2>
+          <div class="table-wrap">
+            <table id="loadingTable" class="data-table"></table>
+          </div>
+        </article>
+
+        <article class="method-card">
+          <h2 data-i18n="varianceTable">Explained Variance by Principal Component</h2>
+          <div class="table-wrap">
+            <table id="varianceTable" class="data-table"></table>
+          </div>
+        </article>
+
+        <article class="method-card">
+          <h2 data-i18n="scalingTable">RSEI Scaling and Clipping</h2>
+          <div class="table-wrap">
+            <table id="scalingTable" class="data-table"></table>
+          </div>
+          <p class="method-note" id="formulaNote"></p>
+        </article>
+      </section>
+    </main>
+
+    <script src="./methods.js?v=20260425a"></script>
+  </body>
+</html>

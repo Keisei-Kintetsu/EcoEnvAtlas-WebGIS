@@ -1,0 +1,336 @@
+{
+  "annual": {
+    "rsei": {
+      "2000": {
+        "mosaic": "/mnt/data6/raster-viewer/mosaics/annual/rsei/2000.json",
+        "asset_count": 91
+      },
+      "2001": {
+        "mosaic": "/mnt/data6/raster-viewer/mosaics/annual/rsei/2001.json",
+        "asset_count": 91
+      },
+      "2002": {
+        "mosaic": "/mnt/data6/raster-viewer/mosaics/annual/rsei/2002.json",
+        "asset_count": 91
+      },
+      "2003": {
+        "mosaic": "/mnt/data6/raster-viewer/mosaics/annual/rsei/2003.json",
+        "asset_count": 91
+      },
+      "2004": {
+        "mosaic": "/mnt/data6/raster-viewer/mosaics/annual/rsei/2004.json",
+        "asset_count": 91
+      },
+      "2005": {
+        "mosaic": "/mnt/data6/raster-viewer/mosaics/annual/rsei/2005.json",
+        "asset_count": 91
+      },
+      "2006": {
+        "mosaic": "/mnt/data6/raster-viewer/mosaics/annual/rsei/2006.json",
+        "asset_count": 91
+      },
+      "2007": {
+        "mosaic": "/mnt/data6/raster-viewer/mosaics/annual/rsei/2007.json",
+        "asset_count": 91
+      },
+      "2008": {
+        "mosaic": "/mnt/data6/raster-viewer/mosaics/annual/rsei/2008.json",
+        "asset_count": 91
+      },
+      "2009": {
+        "mosaic": "/mnt/data6/raster-viewer/mosaics/annual/rsei/2009.json",
+        "asset_count": 91
+      },
+      "2010": {
+        "mosaic": "/mnt/data6/raster-viewer/mosaics/annual/rsei/2010.json",
+        "asset_count": 91
+      },
+      "2011": {
+        "mosaic": "/mnt/data6/raster-viewer/mosaics/annual/rsei/2011.json",
+        "asset_count": 91
+      },
+      "2012": {
+        "mosaic": "/mnt/data6/raster-viewer/mosaics/annual/rsei/2012.json",
+        "asset_count": 91
+      },
+      "2013": {
+        "mosaic": "/mnt/data6/raster-viewer/mosaics/annual/rsei/2013.json",
+        "asset_count": 91
+      },
+      "2014": {
+        "mosaic": "/mnt/data6/raster-viewer/mosaics/annual/rsei/2014.json",
+        "asset_count": 91
+      },
+      "2015": {
+        "mosaic": "/mnt/data6/raster-viewer/mosaics/annual/rsei/2015.json",
+        "asset_count": 91
+      },
+      "2016": {
+        "mosaic": "/mnt/data6/raster-viewer/mosaics/annual/rsei/2016.json",
+        "asset_count": 91
+      },
+      "2017": {
+        "mosaic": "/mnt/data6/raster-viewer/mosaics/annual/rsei/2017.json",
+        "asset_count": 91
+      },
+      "2018": {
+        "mosaic": "/mnt/data6/raster-viewer/mosaics/annual/rsei/2018.json",
+        "asset_count": 91
+      },
+      "2019": {
+        "mosaic": "/mnt/data6/raster-viewer/mosaics/annual/rsei/2019.json",
+        "asset_count": 91
+      },
+      "2020": {
+        "mosaic": "/mnt/data6/raster-viewer/mosaics/annual/rsei/2020.json",
+        "asset_count": 91
+      },
+      "2021": {
+        "mosaic": "/mnt/data6/raster-viewer/mosaics/annual/rsei/2021.json",
+        "asset_count": 91
+      },
+      "2022": {
+        "mosaic": "/mnt/data6/raster-viewer/mosaics/annual/rsei/2022.json",
+        "asset_count": 91
+      },
+      "2023": {
+        "mosaic": "/mnt/data6/raster-viewer/mosaics/annual/rsei/2023.json",
+        "asset_count": 91
+      },
+      "2024": {
+        "mosaic": "/mnt/data6/raster-viewer/mosaics/annual/rsei/2024.json",
+        "asset_count": 91
+      },
+      "2025": {
+        "mosaic": "/mnt/data6/raster-viewer/mosaics/annual/rsei/2025.json",
+        "asset_count": 91
+      }
+    },
+    "lst": {
+      "2000": {
+        "mosaic": "/mnt/data6/raster-viewer/mosaics/annual/lst/2000.json",
+        "asset_count": 91
+      },
+      "2001": {
+        "mosaic": "/mnt/data6/raster-viewer/mosaics/annual/lst/2001.json",
+        "asset_count": 91
+      },
+      "2002": {
+        "mosaic": "/mnt/data6/raster-viewer/mosaics/annual/lst/2002.json",
+        "asset_count": 91
+      },
+      "2003": {
+        "mosaic": "/mnt/data6/raster-viewer/mosaics/annual/lst/2003.json",
+        "asset_count": 91
+      },
+      "2004": {
+        "mosaic": "/mnt/data6/raster-viewer/mosaics/annual/lst/2004.json",
+        "asset_count": 91
+      },
+      "2005": {
+        "mosaic": "/mnt/data6/raster-viewer/mosaics/annual/lst/2005.json",
+        "asset_count": 91
+      },
+      "2006": {
+        "mosaic": "/mnt/data6/raster-viewer/mosaics/annual/lst/2006.json",
+        "asset_count": 91
+      },
+      "2007": {
+        "mosaic": "/mnt/data6/raster-viewer/mosaics/annual/lst/2007.json",
+        "asset_count": 91
+      },
+      "2008": {
+        "mosaic": "/mnt/data6/raster-viewer/mosaics/annual/lst/2008.json",
+        "asset_count": 91
+      },
+      "2009": {
+        "mosaic": "/mnt/data6/raster-viewer/mosaics/annual/lst/2009.json",
+        "asset_count": 91
+      },
+      "2010": {
+        "mosaic": "/mnt/data6/raster-viewer/mosaics/annual/lst/2010.json",
+        "asset_count": 91
+      },
+      "2011": {
+        "mosaic": "/mnt/data6/raster-viewer/mosaics/annual/lst/2011.json",
+        "asset_count": 91
+      },
+      "2012": {
+        "mosaic": "/mnt/data6/raster-viewer/mosaics/annual/lst/2012.json",
+        "asset_count": 91
+      },
+      "2013": {
+        "mosaic": "/mnt/data6/raster-viewer/mosaics/annual/lst/2013.json",
+        "asset_count": 91
+      },
+      "2014": {
+        "mosaic": "/mnt/data6/raster-viewer/mosaics/annual/lst/2014.json",
+        "asset_count": 91
+      },
+      "2015": {
+        "mosaic": "/mnt/data6/raster-viewer/mosaics/annual/lst/2015.json",
+        "asset_count": 91
+      },
+      "2016": {
+        "mosaic": "/mnt/data6/raster-viewer/mosaics/annual/lst/2016.json",
+        "asset_count": 91
+      },
+      "2017": {
+        "mosaic": "/mnt/data6/raster-viewer/mosaics/annual/lst/2017.json",
+        "asset_count": 91
+      },
+      "2018": {
+        "mosaic": "/mnt/data6/raster-viewer/mosaics/annual/lst/2018.json",
+        "asset_count": 91
+      },
+      "2019": {
+        "mosaic": "/mnt/data6/raster-viewer/mosaics/annual/lst/2019.json",
+        "asset_count": 91
+      },
+      "2020": {
+        "mosaic": "/mnt/data6/raster-viewer/mosaics/annual/lst/2020.json",
+        "asset_count": 91
+      },
+      "2021": {
+        "mosaic": "/mnt/data6/raster-viewer/mosaics/annual/lst/2021.json",
+        "asset_count": 91
+      },
+      "2022": {
+        "mosaic": "/mnt/data6/raster-viewer/mosaics/annual/lst/2022.json",
+        "asset_count": 91
+      },
+      "2023": {
+        "mosaic": "/mnt/data6/raster-viewer/mosaics/annual/lst/2023.json",
+        "asset_count": 91
+      },
+      "2024": {
+        "mosaic": "/mnt/data6/raster-viewer/mosaics/annual/lst/2024.json",
+        "asset_count": 91
+      },
+      "2025": {
+        "mosaic": "/mnt/data6/raster-viewer/mosaics/annual/lst/2025.json",
+        "asset_count": 91
+      }
+    },
+    "optical": {
+      "2000": {
+        "mosaic": "/mnt/data6/raster-viewer/mosaics/annual/optical/2000.json",
+        "asset_count": 91
+      },
+      "2001": {
+        "mosaic": "/mnt/data6/raster-viewer/mosaics/annual/optical/2001.json",
+        "asset_count": 91
+      },
+      "2002": {
+        "mosaic": "/mnt/data6/raster-viewer/mosaics/annual/optical/2002.json",
+        "asset_count": 91
+      },
+      "2003": {
+        "mosaic": "/mnt/data6/raster-viewer/mosaics/annual/optical/2003.json",
+        "asset_count": 91
+      },
+      "2004": {
+        "mosaic": "/mnt/data6/raster-viewer/mosaics/annual/optical/2004.json",
+        "asset_count": 91
+      },
+      "2005": {
+        "mosaic": "/mnt/data6/raster-viewer/mosaics/annual/optical/2005.json",
+        "asset_count": 91
+      },
+      "2006": {
+        "mosaic": "/mnt/data6/raster-viewer/mosaics/annual/optical/2006.json",
+        "asset_count": 91
+      },
+      "2007": {
+        "mosaic": "/mnt/data6/raster-viewer/mosaics/annual/optical/2007.json",
+        "asset_count": 91
+      },
+      "2008": {
+        "mosaic": "/mnt/data6/raster-viewer/mosaics/annual/optical/2008.json",
+        "asset_count": 91
+      },
+      "2009": {
+        "mosaic": "/mnt/data6/raster-viewer/mosaics/annual/optical/2009.json",
+        "asset_count": 91
+      },
+      "2010": {
+        "mosaic": "/mnt/data6/raster-viewer/mosaics/annual/optical/2010.json",
+        "asset_count": 91
+      },
+      "2011": {
+        "mosaic": "/mnt/data6/raster-viewer/mosaics/annual/optical/2011.json",
+        "asset_count": 91
+      },
+      "2012": {
+        "mosaic": "/mnt/data6/raster-viewer/mosaics/annual/optical/2012.json",
+        "asset_count": 91
+      },
+      "2013": {
+        "mosaic": "/mnt/data6/raster-viewer/mosaics/annual/optical/2013.json",
+        "asset_count": 91
+      },
+      "2014": {
+        "mosaic": "/mnt/data6/raster-viewer/mosaics/annual/optical/2014.json",
+        "asset_count": 91
+      },
+      "2015": {
+        "mosaic": "/mnt/data6/raster-viewer/mosaics/annual/optical/2015.json",
+        "asset_count": 91
+      },
+      "2016": {
+        "mosaic": "/mnt/data6/raster-viewer/mosaics/annual/optical/2016.json",
+        "asset_count": 91
+      },
+      "2017": {
+        "mosaic": "/mnt/data6/raster-viewer/mosaics/annual/optical/2017.json",
+        "asset_count": 91
+      },
+      "2018": {
+        "mosaic": "/mnt/data6/raster-viewer/mosaics/annual/optical/2018.json",
+        "asset_count": 91
+      },
+      "2019": {
+        "mosaic": "/mnt/data6/raster-viewer/mosaics/annual/optical/2019.json",
+        "asset_count": 91
+      },
+      "2020": {
+        "mosaic": "/mnt/data6/raster-viewer/mosaics/annual/optical/2020.json",
+        "asset_count": 91
+      },
+      "2021": {
+        "mosaic": "/mnt/data6/raster-viewer/mosaics/annual/optical/2021.json",
+        "asset_count": 91
+      },
+      "2022": {
+        "mosaic": "/mnt/data6/raster-viewer/mosaics/annual/optical/2022.json",
+        "asset_count": 91
+      },
+      "2023": {
+        "mosaic": "/mnt/data6/raster-viewer/mosaics/annual/optical/2023.json",
+        "asset_count": 91
+      },
+      "2024": {
+        "mosaic": "/mnt/data6/raster-viewer/mosaics/annual/optical/2024.json",
+        "asset_count": 91
+      },
+      "2025": {
+        "mosaic": "/mnt/data6/raster-viewer/mosaics/annual/optical/2025.json",
+        "asset_count": 91
+      }
+    }
+  },
+  "trend": {
+    "rsei": {
+      "mosaic": "/mnt/data6/raster-viewer/mosaics/trend/rsei.json",
+      "asset_count": 91
+    },
+    "lst": {
+      "mosaic": "/mnt/data6/raster-viewer/mosaics/trend/lst.json",
+      "asset_count": 91
+    },
+    "optical": {
+      "mosaic": "/mnt/data6/raster-viewer/mosaics/trend/optical.json",
+      "asset_count": 91
+    }
+  }
+}

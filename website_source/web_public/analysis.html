@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>County Analytics | China Eco-Environmental GIS</title>
+    <link rel="stylesheet" href="./styles.css?v=20260424f" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="hero">
+        <div>
+          <p class="eyebrow" data-i18n="countyAnalytics">County Analytics</p>
+          <h1 data-i18n="analysisTitle">Ranking and Provincial Summaries</h1>
+          <p class="subtitle" data-i18n="analysisSubtitle">
+            Compare counties and provinces using annual means, long-term change and
+            Sen's slope derived from 2000-2025 county-level indicator series.
+          </p>
+          <nav class="page-nav">
+            <a href="../fusion.html" data-i18n="interactiveMap">Interactive Map</a>
+            <a href="./analysis.html" aria-current="page" data-i18n="countyAnalytics">County Analytics</a>
+            <a href="./methods.html" data-i18n="rseiPca">RSEI PCA</a>
+            <a href="./background.html" data-i18n="background">Research Background</a>
+            <a href="./optical-indicators.html" data-i18n="opticalIndicators">Optical Indicators</a>
+            <a href="./lst-downscaling.html" data-i18n="lst30m">LST 30 m</a>
+            <a href="./tech-stack.html" data-i18n="techStack">Tech Stack</a>
+            <a href="./team.html" data-i18n="team">Team</a>
+          </nav>
+        </div>
+        <label class="language-control language-control-compact" title="Language">
+          <span class="language-icon" aria-hidden="true">🌐</span>
+          <span class="sr-only" data-i18n="language">Language</span>
+          <select id="languageSelect">
+            <option value="en">English</option>
+            <option value="zh_hant">繁體中文</option>
+            <option value="zh_cn">简体中文</option>
+          </select>
+        </label>
+      </section>
+
+      <section class="controls">
+        <label>
+          <span data-i18n="indicator">Indicator</span>
+          <select id="metricSelect">
+            <option value="rsei">RSEI</option>
+            <option value="lst">LST</option>
+            <option value="ndvi">NDVI</option>
+            <option value="wet">WET</option>
+            <option value="ndbsi">NDBSI</option>
+          </select>
+        </label>
+        <label>
+          <span data-i18n="measure">Measure</span>
+          <select id="measureSelect">
+            <option value="slope" data-i18n="sensSlope">Sen's slope</option>
+            <option value="change" data-i18n="changeRange">Change 2025-2000</option>
+            <option value="mean" data-i18n="meanRange">Mean 2000-2025</option>
+            <option value="value" data-i18n="annualValue">Annual value</option>
+          </select>
+        </label>
+        <label>
+          <span data-i18n="year">Year</span>
+          <input id="yearSlider" type="range" min="2000" max="2025" step="1" value="2025" />
+        </label>
+        <output id="yearLabel">2025</output>
+      </section>
+
+      <section class="analytics-grid">
+        <article class="analytics-card">
+          <h2 data-i18n="topCounties">Top Counties</h2>
+          <div id="topChart" class="chart-box chart-box-bars"></div>
+        </article>
+        <article class="analytics-card">
+          <h2 data-i18n="bottomCounties">Bottom Counties</h2>
+          <div id="bottomChart" class="chart-box chart-box-bars"></div>
+        </article>
+        <article class="analytics-card wide">
+          <h2 data-i18n="provincialAverage">Provincial Average</h2>
+          <div id="provinceChart" class="chart-box chart-box-province"></div>
+        </article>
+      </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.1/dist/echarts.min.js"></script>
+    <script src="./analysis.js?v=20260425b"></script>
+  </body>
+</html>

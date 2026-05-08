@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Team | EcoEnvAtlas</title>
+    <link rel="stylesheet" href="./styles.css?v=20260424f" />
+  </head>
+  <body data-page="team">
+    <main class="shell">
+      <section class="hero">
+        <div>
+          <p class="eyebrow" data-i18n="eyebrow">Team</p>
+          <h1 data-i18n="title">Project Team</h1>
+          <p class="subtitle" data-i18n="subtitle">
+            The current page lists the first confirmed team profile and reserved positions for the remaining members.
+          </p>
+          <nav class="page-nav">
+            <a href="../fusion.html" data-i18n="interactiveMap">Interactive Map</a>
+            <a href="./analysis.html" data-i18n="countyAnalytics">County Analytics</a>
+            <a href="./methods.html" data-i18n="rseiPca">RSEI PCA</a>
+            <a href="./background.html" data-i18n="background">Research Background</a>
+            <a href="./optical-indicators.html" data-i18n="opticalIndicators">Optical Indicators</a>
+            <a href="./lst-downscaling.html" data-i18n="lst30m">LST 30 m</a>
+            <a href="./tech-stack.html" data-i18n="techStack">Tech Stack</a>
+            <a href="./team.html" aria-current="page" data-i18n="team">Team</a>
+          </nav>
+        </div>
+        <label class="language-control language-control-compact" title="Language">
+          <span class="language-icon" aria-hidden="true">🌐</span>
+          <span class="sr-only" data-i18n="language">Language</span>
+          <select id="languageSelect">
+            <option value="en">English</option>
+            <option value="zh_hant">繁體中文</option>
+            <option value="zh_cn">简体中文</option>
+          </select>
+        </label>
+      </section>
+
+      <section class="member-grid" id="teamGrid"></section>
+    </main>
+
+    <script src="./team.js?v=20260425a"></script>
+  </body>
+</html>

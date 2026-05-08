@@ -1,0 +1,23 @@
+130M	/var/www/raster-viewer
+2.9T	/mnt/data6/raster-viewer/cogs
+1020K	/mnt/data6/raster-viewer/mosaics
+/mnt/data6/raster-viewer/cogs/trend/rsei/RSEI_SenMK_X120_Y22_rsei_trend_v2_lonlat_yearlymask_cog.tif
+/mnt/data6/raster-viewer/cogs/trend/rsei/RSEI_SenMK_X88_Y46_rsei_trend_v2_lonlat_yearlymask_cog.tif
+/mnt/data6/raster-viewer/cogs/trend/rsei/RSEI_SenMK_X108_Y18_rsei_trend_v2_lonlat_yearlymask_cog.tif
+/mnt/data6/raster-viewer/cogs/trend/rsei/RSEI_SenMK_X108_Y22_rsei_trend_v2_lonlat_yearlymask_cog.tif
+/mnt/data6/raster-viewer/cogs/trend/rsei/RSEI_SenMK_X80_Y42_rsei_trend_v2_lonlat_yearlymask_cog.tif
+/mnt/data6/raster-viewer/cogs/trend/rsei/RSEI_SenMK_X104_Y38_rsei_trend_v2_lonlat_yearlymask_cog.tif
+/mnt/data6/raster-viewer/cogs/trend/rsei/RSEI_SenMK_X124_Y42_rsei_trend_v2_lonlat_yearlymask_cog.tif
+/mnt/data6/raster-viewer/cogs/trend/rsei/RSEI_SenMK_X92_Y34_rsei_trend_v2_lonlat_yearlymask_cog.tif
+/mnt/data6/raster-viewer/cogs/trend/rsei/RSEI_SenMK_X84_Y42_rsei_trend_v2_lonlat_yearlymask_cog.tif
+/mnt/data6/raster-viewer/cogs/trend/rsei/RSEI_SenMK_X112_Y30_rsei_trend_v2_lonlat_yearlymask_cog.tif
+/mnt/data6/raster-viewer/cogs/trend/rsei/RSEI_SenMK_X84_Y38_rsei_trend_v2_lonlat_yearlymask_cog.tif
+/mnt/data6/raster-viewer/cogs/trend/rsei/RSEI_SenMK_X108_Y38_rsei_trend_v2_lonlat_yearlymask_cog.tif
+/mnt/data6/raster-viewer/cogs/trend/rsei/RSEI_SenMK_X100_Y26_rsei_trend_v2_lonlat_yearlymask_cog.tif
+/mnt/data6/raster-viewer/cogs/trend/rsei/RSEI_SenMK_X116_Y26_rsei_trend_v2_lonlat_yearlymask_cog.tif
+/mnt/data6/raster-viewer/cogs/trend/rsei/RSEI_SenMK_X96_Y18_rsei_trend_v2_lonlat_yearlymask_cog.tif
+/mnt/data6/raster-viewer/cogs/trend/rsei/RSEI_SenMK_X80_Y46_rsei_trend_v2_lonlat_yearlymask_cog.tif
+/mnt/data6/raster-viewer/cogs/trend/rsei/RSEI_SenMK_X88_Y42_rsei_trend_v2_lonlat_yearlymask_cog.tif
+/mnt/data6/raster-viewer/cogs/trend/rsei/RSEI_SenMK_X100_Y42_rsei_trend_v2_lonlat_yearlymask_cog.tif
+/mnt/data6/raster-viewer/cogs/trend/rsei/RSEI_SenMK_X100_Y30_rsei_trend_v2_lonlat_yearlymask_cog.tif
+/mnt/data6/raster-viewer/cogs/trend/rsei/RSEI_SenMK_X104_Y34_rsei_trend_v2_lonlat_yearlymask_cog.tif

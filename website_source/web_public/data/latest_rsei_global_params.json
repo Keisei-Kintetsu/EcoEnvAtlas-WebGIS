@@ -1,0 +1,121 @@
+{
+  "version": "rsei_global_params_v2_lonlat_yearlymask",
+  "run_dir": "/mnt/data/RSEI_pca_params_v2_lonlat_yearlymask/run_20260415_125757",
+  "year_start": 2000,
+  "year_end": 2025,
+  "feature_order": [
+    "NDVI",
+    "WET",
+    "NDBSI",
+    "LST"
+  ],
+  "count_valid_nonwater_pixels": 340570000139,
+  "optical_root_original": "/mnt/data/RSEI_predictors/optical",
+  "optical_root_repaired": "/mnt/data/RSEI_predictors/optical_repaired_v2",
+  "lst_root": "/mnt/data/LST_predictions_int16_rf_n100_d25_lonlat_v2",
+  "watermask_dir": "/mnt/data/rsei_watermask_yearly_v1",
+  "watermask_fallback_year": 2021,
+  "watermask_rule": "1=water_or_outside_china, 0=nonwater_valid_domain; for years after fallback year, reuse fallback-year watermask",
+  "standardization_mean": {
+    "NDVI": 0.40533961040002403,
+    "WET": -0.1604590340132746,
+    "NDBSI": -0.04333824464615557,
+    "LST": 27.83946690485396
+  },
+  "standardization_std": {
+    "NDVI": 0.2890519631661325,
+    "WET": 0.10009475675978409,
+    "NDBSI": 0.17050939447035407,
+    "LST": 8.985905480304138
+  },
+  "covariance_matrix": {
+    "NDVI": {
+      "NDVI": 0.08355103741019523,
+      "WET": 0.016838767162506388,
+      "NDBSI": -0.04211517576901694,
+      "LST": -0.9601440943517705
+    },
+    "WET": {
+      "NDVI": 0.016838767162506388,
+      "WET": 0.010018960330800342,
+      "NDBSI": -0.0141866411861273,
+      "LST": -0.48429569748292334
+    },
+    "NDBSI": {
+      "NDVI": -0.04211517576901694,
+      "WET": -0.0141866411861273,
+      "NDBSI": 0.029073453602646807,
+      "LST": 0.6353705773016705
+    },
+    "LST": {
+      "NDVI": -0.9601440943517705,
+      "WET": -0.48429569748292334,
+      "NDBSI": 0.6353705773016705,
+      "LST": 80.74649730095996
+    }
+  },
+  "correlation_matrix": {
+    "NDVI": {
+      "NDVI": 1.0,
+      "WET": 0.582000074071086,
+      "NDBSI": -0.8545045550824574,
+      "LST": -0.3696567539832747
+    },
+    "WET": {
+      "NDVI": 0.582000074071086,
+      "WET": 1.0,
+      "NDBSI": -0.8312275786649317,
+      "LST": -0.5384401494791995
+    },
+    "NDBSI": {
+      "NDVI": -0.8545045550824574,
+      "WET": -0.8312275786649317,
+      "NDBSI": 0.9999999999999999,
+      "LST": 0.41468367769751246
+    },
+    "LST": {
+      "NDVI": -0.3696567539832747,
+      "WET": -0.5384401494791995,
+      "NDBSI": 0.41468367769751246,
+      "LST": 1.0000000000000002
+    }
+  },
+  "eigenvalues": [
+    2.8347134811139902,
+    0.7326523540991948,
+    0.37564314796496395,
+    0.056991016821850704
+  ],
+  "pc1_weight_raw": {
+    "NDVI": -0.5069222939295406,
+    "WET": -0.5283447612305466,
+    "NDBSI": 0.5623217693947923,
+    "LST": 0.38428612889637204
+  },
+  "pc1_weight_oriented": {
+    "NDVI": 0.5069222939295406,
+    "WET": 0.5283447612305466,
+    "NDBSI": -0.5623217693947923,
+    "LST": -0.38428612889637204
+  },
+  "pc1_loading_oriented": {
+    "NDVI": 0.8534851635709897,
+    "WET": 0.8895533306795261,
+    "NDBSI": -0.9467590853247237,
+    "LST": -0.6470074674300481
+  },
+  "orientation_multiplier": -1.0,
+  "orientation_score_raw": -1.9818749534512516,
+  "rsei_formula_note": "First standardize each feature with the global mean/std, then compute PC1_oriented = sum(z_i * pc1_weight_oriented_i). Finally scale to 0-1 using p02/p98 after clipping.",
+  "pc1_min": -10.920675827439544,
+  "pc1_max": 9.55957316675456,
+  "pc1_p02": -2.9527950286865234,
+  "pc1_p98": 2.6035306453704834,
+  "pc1_sample_size": 1998788,
+  "total_seen_second_pass": 340570000139,
+  "recommended_rsei_scaling": {
+    "clip_low": -2.9527950286865234,
+    "clip_high": 2.6035306453704834,
+    "formula": "RSEI = clip((PC1_oriented - p02) / (p98 - p02), 0, 1)"
+  }
+}

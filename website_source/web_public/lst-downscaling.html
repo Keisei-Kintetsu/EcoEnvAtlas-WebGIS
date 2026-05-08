@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>30 米 LST 降尺度 | EcoEnvAtlas</title>
+    <link rel="stylesheet" href="./styles.css?v=20260424f" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="hero">
+        <div>
+          <p class="eyebrow" id="lstEyebrow">30 米 LST</p>
+          <h1 id="lstTitle">30 米地表温度降尺度</h1>
+          <p class="subtitle" id="lstSubtitle">
+            本页说明长期全国尺度 30 米 LST 构建所面临的主要方法学问题，并概述本研究基于 MODIS LST、多源环境变量和随机森林模型实现空间降尺度的总体思路。
+          </p>
+          <nav class="page-nav">
+            <a href="../fusion.html" id="navFusion">交互地图</a>
+            <a href="./analysis.html" id="navAnalysis">县域分析</a>
+            <a href="./methods.html" id="navPca">RSEI PCA</a>
+            <a href="./background.html" id="navBackground">研究背景</a>
+            <a href="./optical-indicators.html" id="navOptical">光学指标</a>
+            <a href="./lst-downscaling.html" id="navLst" aria-current="page">30 米 LST</a>
+            <a href="./tech-stack.html" id="navStack">技术栈</a>
+            <a href="./team.html" id="navTeam">团队成员</a>
+          </nav>
+        </div>
+        <label class="language-control language-control-compact" title="Language">
+          <span class="language-icon" aria-hidden="true">🌐</span>
+          <span class="sr-only">Language</span>
+          <select id="languageSelect">
+            <option value="en">English</option>
+            <option value="zh_hant">繁體中文</option>
+            <option value="zh_cn">简体中文</option>
+          </select>
+        </label>
+      </section>
+
+      <section class="content-grid">
+        <article class="content-card wide">
+          <h2 id="lstSection1Title">LST 构建面临的主要方法学挑战</h2>
+          <div class="text-block" id="lstSection1Body"></div>
+          <div class="table-wrap">
+            <table class="mini-table">
+              <thead>
+                <tr>
+                  <th id="lstTableHead1">卫星</th>
+                  <th id="lstTableHead2">热红外传感器</th>
+                  <th id="lstTableHead3">热红外波段</th>
+                  <th id="lstTableHead4">热红外原生分辨率</th>
+                  <th id="lstTableHead5">时间覆盖</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Landsat 5</td><td>TM</td><td>Band 6</td><td>120 m</td><td id="lstTime1">16 天重访</td></tr>
+                <tr><td>Landsat 7</td><td>ETM+</td><td>Band 6</td><td>60 m</td><td id="lstTime2">16 天重访</td></tr>
+                <tr><td>Landsat 8/9</td><td>TIRS / TIRS-2</td><td>Band 10, 11</td><td>100 m</td><td id="lstTime3">16 天重访</td></tr>
+                <tr><td>Terra MODIS</td><td>MODIS</td><td id="lstProd4">MOD11A2 产品</td><td>1 km</td><td id="lstTime4">8-day composite</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+
+        <article class="content-card wide">
+          <h2 id="lstSection2Title">LST 降尺度的技术路线</h2>
+          <div class="meta-list" id="lstSection2List"></div>
+        </article>
+
+        <article class="content-card">
+          <h2 id="lstSection3Title">输入变量</h2>
+          <ul class="bullet-list" id="lstSection3List"></ul>
+        </article>
+
+        <article class="content-card">
+          <h2 id="lstSection4Title">随机森林变量重要性</h2>
+          <div id="featureImportanceChart" class="chart-box chart-box-bars"></div>
+        </article>
+
+        <article class="content-card wide">
+          <h2 id="lstSection5Title">采用 MODIS 作为目标场的原因</h2>
+          <div class="figure-grid">
+            <figure class="figure-card">
+              <img src="./assets/research/landsat_valid_count_2000.png" alt="Landsat valid count 2000" />
+              <figcaption class="figure-caption" id="lstCaption1">2000 年 Landsat 热红外有效观测数。可以看出，全国尺度下可用热红外观测数分布并不均衡，局部地区有效观测明显不足，难以直接支撑长期年尺度全国 LST 产品构建。</figcaption>
+            </figure>
+            <figure class="figure-card">
+              <img src="./assets/research/modis_valid_count_2000.png" alt="MODIS valid count 2000" />
+              <figcaption class="figure-caption" id="lstCaption2">2000 年 Terra MODIS LST 有效观测数。相较于 Landsat 热红外观测，MODIS 在时间覆盖上更稳定，因此更适合作为长期全国年尺度 LST 的基准目标场。</figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <article class="content-card wide">
+          <h2 id="lstSection6Title">地形辅助变量</h2>
+          <div class="figure-grid">
+            <figure class="figure-card">
+              <img src="./assets/research/china_dem.png" alt="China DEM" />
+              <figcaption class="figure-caption" id="lstCaption3">中国 DEM。高程对大尺度温度空间格局具有稳定约束作用，也是模型中最重要的预测变量之一。</figcaption>
+            </figure>
+            <figure class="figure-card">
+              <img src="./assets/research/china_slope.png" alt="China slope" />
+              <figcaption class="figure-caption" id="lstCaption4">中国坡度。坡度能够反映地形起伏特征，在山区和高原地区有助于补充局地环境差异信息。</figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <article class="content-card wide">
+          <h2 id="lstSection7Title">模型评估</h2>
+          <div class="figure-grid">
+            <figure class="figure-card">
+              <img src="./assets/research/rf_basic_eval.png" alt="RF basic evaluation" />
+              <figcaption class="figure-caption" id="lstCaption5">基于 2000-2024 年样本的 70/30 基础评估结果，用于检验模型在常规样本划分条件下的拟合能力与泛化表现。</figcaption>
+            </figure>
+            <figure class="figure-card">
+              <img src="./assets/research/rf_temporal_2025.png" alt="RF temporal validation 2025" />
+              <figcaption class="figure-caption" id="lstCaption6">2025 年时间外验证结果。由于 2025 年未参与模型训练，因此该检验更能反映模型的跨年份迁移能力。</figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <article class="content-card wide">
+          <h2 id="lstSection8Title">聚合至 MODIS 尺度后的验证</h2>
+          <div class="figure-grid">
+            <figure class="figure-card">
+              <img src="./assets/research/lst_vs_modis_all_years.png" alt="LST vs MODIS all years" />
+              <figcaption class="figure-caption" id="lstCaption7">26 年全部像元汇总后的 30 米 LST 与 MODIS LST 相关性密度图。为保证评价尺度一致，本研究先将 30 米预测结果聚合至 MODIS 网格，再与年度 MODIS LST 产品进行对比。</figcaption>
+            </figure>
+          </div>
+          <div class="table-wrap" style="margin-top:16px;">
+            <table class="mini-table" id="correlationSummaryTable"></table>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.1/dist/echarts.min.js"></script>
+    <script src="./lst-downscaling.js?v=20260425a"></script>
+  </body>
+</html>

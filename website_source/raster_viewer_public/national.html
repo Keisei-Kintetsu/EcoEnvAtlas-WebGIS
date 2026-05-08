@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>National Raster Viewer</title>
+    <link href="https://unpkg.com/maplibre-gl@5.3.0/dist/maplibre-gl.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="hero">
+        <div>
+          <p class="eyebrow">30 m National Raster Viewer</p>
+          <h1>National Raster Viewer</h1>
+          <p class="subtitle">
+            Browse annual 30 m RSEI, LST, and optical mosaics for 2000-2025, then switch to
+            national Sen-MK slope layers rendered on demand from TiTiler MosaicJSON endpoints.
+          </p>
+        </div>
+        <div class="status-card">
+          <span id="statusText">Loading viewer...</span>
+          <strong id="statusYear">2025</strong>
+          <small>current year</small>
+        </div>
+      </section>
+
+      <section class="controls">
+        <label>
+          Product
+          <select id="modeSelect">
+            <option value="annual">Annual value</option>
+            <option value="trend">Trend slope</option>
+          </select>
+        </label>
+
+        <label>
+          Layer
+          <select id="layerSelect">
+            <option value="rsei">RSEI</option>
+            <option value="lst">LST</option>
+          </select>
+        </label>
+
+        <label>
+          Year
+          <select id="yearSelect"></select>
+        </label>
+
+        <label>
+          Opacity
+          <input id="opacitySlider" type="range" min="0.2" max="1" step="0.05" value="0.9" />
+        </label>
+
+        <div class="pill">
+          <span>Coverage</span>
+          <strong id="coverageLabel">China 30 m</strong>
+        </div>
+      </section>
+
+      <section class="workspace">
+        <div class="map-wrap">
+          <div id="map"></div>
+          <div class="legend">
+            <strong id="legendTitle">RSEI 2025</strong>
+            <div class="legend-ramp" id="legendRamp"></div>
+            <div class="legend-row">
+              <span id="legendMin">0</span>
+              <span id="legendMax">1</span>
+            </div>
+          </div>
+        </div>
+
+        <aside class="panel">
+          <div class="panel-header">
+            <p class="eyebrow">National Mosaic</p>
+            <h2 id="panelTitle">RSEI 2025</h2>
+            <p id="panelMeta">Click the map to query a 30 m pixel from the current national mosaic.</p>
+          </div>
+
+          <div class="stats-grid">
+            <div>
+              <span>Lon</span>
+              <strong id="lonValue">--</strong>
+            </div>
+            <div>
+              <span>Lat</span>
+              <strong id="latValue">--</strong>
+            </div>
+            <div>
+              <span>Value</span>
+              <strong id="pixelValue">--</strong>
+            </div>
+            <div>
+              <span>Status</span>
+              <strong id="queryStatus">Ready</strong>
+            </div>
+          </div>
+
+          <div class="notes">
+            <p><strong>Current workflow</strong></p>
+            <p>Annual mosaics are built from 91 masked COG tiles per year.</p>
+            <p>Trend mosaics are built from 91 Sen-MK COG tiles per product.</p>
+            <p>The viewer requests WebMercator tiles dynamically from TiTiler and supports pixel queries across the national coverage.</p>
+          </div>
+        </aside>
+      </section>
+    </main>
+
+    <script src="https://unpkg.com/maplibre-gl@5.3.0/dist/maplibre-gl.js"></script>
+    <script src="./national.js"></script>
+  </body>
+</html>

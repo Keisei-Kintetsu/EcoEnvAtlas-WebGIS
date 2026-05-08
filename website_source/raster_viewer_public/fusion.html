@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interactive Map | EcoEnvAtlas</title>
+    <link href="https://unpkg.com/maplibre-gl@5.3.0/dist/maplibre-gl.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css?v=20260426c" />
+  </head>
+  <body>
+    <main class="shell shell-fusion">
+      <section class="hero hero-fusion">
+        <div>
+          <p class="eyebrow" data-i18n="eyebrow">EcoEnvAtlas</p>
+          <h1 data-i18n="title">Integrated Eco-Environmental Atlas</h1>
+          <p class="subtitle" data-i18n="subtitle">
+            Explore national raster layers, county statistics, and province boundaries within one
+            unified map interface, with annual patterns, long-term change, and trend information
+            linked in the same spatial framework.
+          </p>
+          <nav class="page-nav fusion-page-nav">
+            <a href="./fusion.html" aria-current="page" data-i18n="fusionMap">Interactive Map</a>
+            <a href="./counties/analysis.html" data-i18n="countyAnalytics">County Analytics</a>
+            <a href="./counties/methods.html" data-i18n="rseiPca">RSEI PCA</a>
+            <a href="./counties/background.html" data-i18n="background">Research Background</a>
+            <a href="./counties/optical-indicators.html" data-i18n="opticalIndicators">Optical Indicators</a>
+            <a href="./counties/lst-downscaling.html" data-i18n="lst30m">LST 30 m</a>
+            <a href="./counties/tech-stack.html" data-i18n="techStack">Tech Stack</a>
+            <a href="./counties/team.html" data-i18n="team">Team</a>
+          </nav>
+        </div>
+        <label class="language-control language-control-compact" title="Language">
+          <span class="language-icon" aria-hidden="true">🌐</span>
+          <span class="sr-only" data-i18n="language">Language</span>
+          <select id="languageSelect">
+            <option value="en">English</option>
+            <option value="zh_hant">繁體中文</option>
+            <option value="zh_cn">简体中文</option>
+          </select>
+        </label>
+      </section>
+
+      <section class="controls fusion-controls fusion-controls-wide">
+        <label>
+          <span data-i18n="indicator">Indicator</span>
+          <select id="metricSelect">
+            <option value="rsei">RSEI</option>
+            <option value="lst">LST</option>
+            <option value="ndvi">NDVI</option>
+            <option value="wet">WET</option>
+            <option value="ndbsi">NDBSI</option>
+          </select>
+        </label>
+
+        <label>
+          <span data-i18n="display">Display</span>
+          <select id="displaySelect">
+            <option value="annual" data-i18n="annualValue">Annual value</option>
+            <option value="trend" data-i18n="trendSlope">Trend slope</option>
+            <option value="change" data-i18n="changeValue">Change 2025-2000</option>
+          </select>
+        </label>
+
+        <label>
+          <span data-i18n="year">Year</span>
+          <input id="yearSlider" type="range" min="2000" max="2025" step="1" value="2025" />
+        </label>
+
+        <output id="yearLabel">2025</output>
+
+        <label>
+          <span data-i18n="layer">Layer</span>
+          <div class="segmented" id="layerToggles">
+            <button type="button" class="seg-btn is-active" id="toggleRaster" data-i18n="raster">Raster</button>
+            <button type="button" class="seg-btn is-active" id="toggleCounty" data-i18n="county">County</button>
+          </div>
+        </label>
+
+        <label>
+          <span data-i18n="compareView">Compare</span>
+          <div class="segmented" id="compareToggles">
+            <button type="button" class="seg-btn" id="toggleCompare">Compare Off</button>
+          </div>
+        </label>
+
+        <label class="compare-year-control">
+          <span data-i18n="compareYear">Compare Year</span>
+          <input id="compareYearSlider" type="range" min="2000" max="2025" step="1" value="2000" />
+        </label>
+
+        <output id="compareYearLabel">2000</output>
+
+        <label class="search-control">
+          <span data-i18n="search">Search</span>
+          <div class="search-row">
+            <input id="locationSearch" type="search" autocomplete="off" data-i18n-placeholder="searchPlaceholder" placeholder="Search province, prefecture, county, or code" />
+            <button type="button" class="seg-btn action-btn" id="searchBtn" data-i18n="locate">Locate</button>
+            <button type="button" class="seg-btn action-btn" id="shareViewBtn" data-i18n="shareView">Share View</button>
+          </div>
+          <small id="searchStatus" class="control-note" data-i18n="searchHint">Search a province, prefecture, county, or 6-digit county code.</small>
+        </label>
+      </section>
+
+      <section class="workspace unified-workspace fusion-map-workspace">
+        <div class="map-wrap fusion-map-wrap">
+          <div class="map-stage" id="mapStage">
+            <div id="fusionMap"></div>
+            <div id="compareMap"></div>
+            <div class="compare-badge compare-badge-primary" id="primaryYearBadge">2025</div>
+            <div class="compare-badge compare-badge-secondary" id="compareYearBadge">2000</div>
+          </div>
+          <div class="legend">
+            <strong id="legendTitle">RSEI 2025</strong>
+            <div class="legend-ramp" id="legendRamp"></div>
+            <div class="legend-row">
+              <span id="legendMin">0</span>
+              <span id="legendMax">1</span>
+            </div>
+          </div>
+        </div>
+
+        <aside class="panel fusion-side-panel">
+          <div class="panel-header panel-header-inline">
+            <div>
+              <p class="eyebrow" data-i18n="rasterQuery">Raster Query</p>
+              <h2 id="pixelTitle" data-i18n="pixelInformation">Pixel Information</h2>
+              <p id="pixelMeta" data-i18n="pixelHint">Click anywhere on the map to query the active raster layer when raster rendering is on.</p>
+            </div>
+            <button type="button" class="panel-action" id="exportPixelChartBtn" data-i18n="exportChart">Export PNG</button>
+          </div>
+
+          <div class="stats-grid">
+            <div>
+              <span data-i18n="longitude">Longitude</span>
+              <strong id="pixelLon">--</strong>
+            </div>
+            <div>
+              <span data-i18n="latitude">Latitude</span>
+              <strong id="pixelLat">--</strong>
+            </div>
+            <div>
+              <span id="pixelPrimaryLabel" data-i18n="value">Value</span>
+              <strong id="pixelPrimaryValue">--</strong>
+            </div>
+            <div id="pixelCompareCard" hidden>
+              <span id="pixelCompareLabel">2000 Value</span>
+              <strong id="pixelCompareValue">--</strong>
+            </div>
+            <div>
+              <span data-i18n="status">Status</span>
+              <strong id="pixelStatus">Ready</strong>
+            </div>
+          </div>
+
+          <div id="pixelChart" class="chart-box fusion-chart-box"></div>
+
+          <div class="panel-header panel-header-spaced">
+            <p class="eyebrow" data-i18n="selectedCounty">Selected County</p>
+            <h2 id="countyName" data-i18n="clickCounty">Click a county</h2>
+            <p id="countyMeta" data-i18n="countyHint">County details will appear here.</p>
+          </div>
+
+          <div class="stats-grid">
+            <div>
+              <span data-i18n="current">Current</span>
+              <strong id="countyCurrent">--</strong>
+            </div>
+            <div>
+              <span data-i18n="slope">Slope</span>
+              <strong id="countySlope">--</strong>
+            </div>
+            <div>
+              <span data-i18n="change">Change</span>
+              <strong id="countyChange">--</strong>
+            </div>
+            <div>
+              <span data-i18n="mkP">MK p</span>
+              <strong id="countyP">--</strong>
+            </div>
+          </div>
+
+          <div id="countyChart" class="chart-box fusion-chart-box"></div>
+        </aside>
+      </section>
+    </main>
+
+    <script src="https://unpkg.com/maplibre-gl@5.3.0/dist/maplibre-gl.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.1/dist/echarts.min.js"></script>
+    <script src="./fusion.js?v=20260426f"></script>
+  </body>
+</html>
